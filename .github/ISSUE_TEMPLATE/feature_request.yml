@@ -1,0 +1,40 @@
+name: Предложение
+
+description: Предложить новую возможность или улучшение YG Autofill
+title: "[Feature]: "
+labels: []
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Спасибо за предложение. Опишите задачу и ожидаемое поведение как можно конкретнее.
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: Какая проблема решается?
+      description: Что сейчас приходится делать вручную или что работает неудобно?
+      placeholder: Сейчас я вынужден...
+    validations:
+      required: true
+
+  - type: textarea
+    id: solution
+    attributes:
+      label: Предлагаемое решение
+      description: Как, по вашему мнению, должна работать новая возможность?
+    validations:
+      required: true
+
+  - type: textarea
+    id: json
+    attributes:
+      label: Пример JSON
+      description: Если изменение связано с форматом store-listing, приложите минимальный пример.
+      render: json
+
+  - type: textarea
+    id: additional
+    attributes:
+      label: Дополнительная информация
+      description: Скриншоты, фрагменты лога, ссылки или другие детали.
