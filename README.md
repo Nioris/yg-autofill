@@ -7,6 +7,7 @@
 Загружает локализации, заполняет текстовые поля, категории, теги и ключевые слова, автоматически учитывает лимиты и сохраняет подробный журнал выполнения.
 
 [![Version](https://img.shields.io/badge/version-12.0-2f81f7?style=flat-square)](CHANGELOG.md)
+[![Validate](https://github.com/Nioris/yg-autofill/actions/workflows/validate.yml/badge.svg)](https://github.com/Nioris/yg-autofill/actions/workflows/validate.yml)
 [![License](https://img.shields.io/badge/license-Apache--2.0-3da639?style=flat-square)](LICENSE)
 [![JavaScript](https://img.shields.io/badge/JavaScript-vanilla-f7df1e?style=flat-square&logo=javascript&logoColor=000)](yg-autofill.js)
 [![Yandex Games](https://img.shields.io/badge/Yandex%20Games-console-ffcc00?style=flat-square)](https://yandex.ru/games/)
