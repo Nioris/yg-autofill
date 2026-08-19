@@ -1,0 +1,32 @@
+name: Validate
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
+      - name: Check JavaScript syntax
+        run: node --check yg-autofill.js
+
+      - name: Validate JSON template
+        run: python tools/validate_json.py examples/store-listing-template.json
+
+      - name: Validate Russian example
+        run: python tools/validate_json.py examples/store-listing-ru.json
