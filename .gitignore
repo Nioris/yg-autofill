@@ -1,0 +1,13 @@
+# OS and editor files
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Logs and temporary exports
+*.log
+*.log.txt
+__pycache__/
+*.py[cod]
