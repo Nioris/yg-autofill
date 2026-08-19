@@ -1,0 +1,20 @@
+{
+  "lang": "en",
+  "title": "Game title",
+  "subtitle": "A short description of the game",
+  "category": [
+    "Casual"
+  ],
+  "tags": [
+    "browser",
+    "mobile"
+  ],
+  "keywords": [
+    "game",
+    "browser",
+    "casual"
+  ],
+  "seo_description": "A concise search description of the game.",
+  "about": "Describe the premise, main mechanics, progression and distinctive features of the game.",
+  "how_to_play": "Explain controls and the main rules.\n\n• First action.\n• Second action."
+}
