@@ -1,0 +1,42 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://rodrik.dev/schemas/yg-autofill/store-listing.schema.json",
+  "title": "YG Autofill store listing",
+  "description": "Формат файла карточки игры для YG Autofill. Поля x-yandex-maxLength являются подсказками: скрипт допускает более длинный исходный текст и обрезает его при заполнении.",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "lang": {
+      "type": "string",
+      "enum": ["ru", "en", "es", "pt", "tr", "de", "fr", "it", "ja", "ko", "zh", "ar", "hi", "id"],
+      "description": "Код языка. Имеет приоритет над кодом в имени файла."
+    },
+    "title": {"type": "string", "minLength": 1, "x-yandex-maxLength": 50},
+    "subtitle": {"type": "string", "minLength": 1, "x-yandex-maxLength": 70},
+    "short_description": {"type": "string", "minLength": 1, "x-yandex-maxLength": 70},
+    "seo_description": {"type": "string", "minLength": 1, "x-yandex-maxLength": 160},
+    "about": {"type": "string", "minLength": 1, "x-yandex-maxLength": 1000},
+    "how_to_play": {"type": "string", "minLength": 1, "x-yandex-maxLength": 1000},
+    "category": {"$ref": "#/$defs/stringOrStringArray"},
+    "categories": {"$ref": "#/$defs/stringOrStringArray"},
+    "tags": {"$ref": "#/$defs/stringOrStringArray"},
+    "keywords": {"$ref": "#/$defs/stringOrStringArray", "x-yandex-maxLengthAfterJoin": 100}
+  },
+  "required": ["lang", "title", "seo_description", "about", "how_to_play"],
+  "allOf": [
+    {
+      "anyOf": [
+        {"required": ["subtitle"]},
+        {"required": ["short_description"]}
+      ]
+    }
+  ],
+  "$defs": {
+    "stringOrStringArray": {
+      "oneOf": [
+        {"type": "string", "minLength": 1},
+        {"type": "array", "minItems": 1, "items": {"type": "string", "minLength": 1}}
+      ]
+    }
+  }
+}
